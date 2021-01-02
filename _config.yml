@@ -1,0 +1,77 @@
+baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
+url: "unreal639.github.io" # the base hostname & protocol for your site.
+
+paginate: 6 #articles per page
+paginate_path: /blog/page:num #makes pagination working
+
+# header text
+title: island
+header: Coding here...
+
+# for welcome page
+# to replace image go to index.html
+email:
+  address: "user@example.com"
+  text: "user (at) example.com"
+
+
+# disqus comment
+# disqus:
+#     shortname: "test" #your disqus comment short name
+
+# valine comment
+# valine:
+#     appId: ""
+#     appKey: ""
+
+
+# google analytics
+google:
+    tracking-id: "" #your tracking id here
+
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+highlighter: rouge
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+# just copied from huxpro.github.io/_config.yml
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      # start_line: 1
+
+# This is used by feed.xml. Uncomment if you want to use it.
+# description: "..."
+
+exclude:
+  - "README.md"
+  - "CHANGELOG.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+
+permalink: /posts/:title
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
